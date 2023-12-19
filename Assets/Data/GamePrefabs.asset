@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1d97830dfd7cba4ab3821b1a00e2ab5, type: 3}
+  m_Name: GamePrefabs
+  m_EditorClassIdentifier: 
+  <InstantiatablePrefabs>k__BackingField:
+  - {fileID: -3360520930463616071, guid: 4c03fe598166e498db87a27c997c3f62, type: 3}
+  - {fileID: 6801500360548224372, guid: 2f071cfca0191184bb2b99edbc908138, type: 3}

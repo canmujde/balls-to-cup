@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ecb06ecba6f64077acd66c30fed36f2, type: 3}
+  m_Name: Core
+  m_EditorClassIdentifier: 
+  <ShowSettings>k__BackingField: 0
+  <GameplaySettings>k__BackingField: {fileID: 11400000, guid: b269339d159ee446f83fe8b19b086153, type: 2}
+  <Assets>k__BackingField: {fileID: 11400000, guid: 85a2ee3d21a7f9c419e5022681bae288, type: 2}
+  <Prefabs>k__BackingField: {fileID: 11400000, guid: 6fdcffa1aed02e940951205630f88d36, type: 2}
+  <TechnicalSettings>k__BackingField: {fileID: 11400000, guid: 21750f461c27147ce91d3a500a5259d1, type: 2}
+  <Levels>k__BackingField:
+  - {fileID: 11400000, guid: 8f55daaffbd93b04fab6846368645961, type: 2}
