@@ -37,10 +37,6 @@ namespace CMCore.Managers
             Application.isPlaying ? LevelManager.Current ? LevelManager.Current : null : null;
         [ShowInInspector] public static string InputAllowed => Application.isPlaying && InputManager.InputAllowed ? "Yes" : "No" ;
         [ShowInInspector] public static string Seed => Application.isPlaying ? LevelManager.Seed.ToString() : null;
-        
-        [HideLabel]
-        [DisplayAsString(false), ShowInInspector]public static string RemoteData => Application.isPlaying ? DataManager.RemoteData: null;
-
 
         #endregion
 

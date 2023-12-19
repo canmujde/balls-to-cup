@@ -11,48 +11,11 @@ namespace CMCore.Managers
     public class DataManager
     {
         public string RemoteData { get; private set; }
-        private int _attemptCount;
-        public int Attempts => _attemptCount;
 
         public DataManager()
         {
             JsonConvert.DefaultSettings = () => Constants.Defaults.JsonSerializerSettings;
-            GameManager.Instance.StartCoroutine(
-                RequestForRemoteData(GameManager.Instance.Core.GameplaySettings.FullURL));
         }
-
-        private IEnumerator RequestForRemoteData(string fullURL)
-        {
-            var requestTimeout = 1;
-            using var request = UnityWebRequest.Get(fullURL);
-            var requestOperation = request.SendWebRequest();
-            if (!string.IsNullOrEmpty(RemoteData)) yield break;
-            
-            var elapsedTime = 0.0f;
-            while (!requestOperation.isDone && elapsedTime < requestTimeout)
-            {
-                elapsedTime += Time.deltaTime;
-                yield return null;
-            }
-                
-            if (requestOperation.isDone &&
-                request.result == UnityWebRequest.Result.Success)
-            {
-                RemoteData = request.downloadHandler.text;
-                Debug.Log("<b><color=green>" + "Request is successfully retrieved!" + "</color></b>");
-            }
-            else
-            {
-                request.Abort();
-                _attemptCount++;
-                if (_attemptCount-1 < GameManager.Instance.Core.GameplaySettings.MaximumAttemptToRequestData)
-                {
-                    GameManager.Instance.StartCoroutine(RequestForRemoteData(fullURL));
-                }
-                Debug.Log("<b><color=red>" + "Web request failed. Error: " + request.error + "</color></b>");
-            }
-        }
-
 
         #region PlayerPrefs
 
