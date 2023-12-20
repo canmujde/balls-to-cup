@@ -1,12 +1,16 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using CMCore.Managers;
 using DG.Tweening;
+using Dreamteck.Splines;
+using Unity.VectorGraphics;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Random = UnityEngine.Random;
-using Sprite = UnityEngine.Sprite;
-using Task = System.Threading.Tasks.Task;
+// ReSharper disable InconsistentNaming
 
 namespace CMCore.Utilities
 {
@@ -14,11 +18,87 @@ namespace CMCore.Utilities
     {
         
         
+        public static string ReadSVG()
+        {
+            var svgPath = AssetDatabase.GetAssetPath(GameManager.LevelManager.Current.TubeSvg).Replace("Assets/", "");
+            var fullPath = Path.Combine(Application.dataPath, svgPath);
+            return File.ReadAllText(fullPath);
+        }
+        
+        public static SVGParser.SceneInfo ParseSVGContent(string content)
+        {
+            var stringRead = new StringReader(content);
+            return SVGParser.ImportSVG(stringRead);
+        }
+
+
+        public static List<SplinePoint> GenerateSplinePointsFromSVGInfo(SVGParser.SceneInfo info, float scaleFactor)
+        {
+            var sceneRoot = info.Scene.Root;
+            var firstPath = sceneRoot.Children[0];
+            var firstShape = firstPath.Shapes[0];
+            var firstContour = firstShape.Contours[0];
+            var segments = firstContour.Segments;
+            var points = new List<SplinePoint>();
+
+
+            foreach (var currentSegment in segments)
+            {
+                var pos = currentSegment.P0 * scaleFactor;
+
+                var splinePoint = new SplinePoint(pos);
+                
+                points.Add(splinePoint);
+            }
+
+            if (points[0].position.y > points.Last().position.y)
+            {
+                var newList = new List<SplinePoint>();
+                var offset = points[0].position.y;
+                foreach (var splinePoint in points)
+                {
+                
+                    var pos = splinePoint.position;
+
+                    pos.y *= -1;
+                
+                
+                    var abs = Mathf.Abs(offset);
+                    pos.y += abs;
+                
+                    newList.Add(new SplinePoint(pos));
+ 
+                }
+                points = newList;
+            }
+            return RemoveClosePoints(points);
+        }
+
+        public static List<SplinePoint> RemoveClosePoints(List<SplinePoint> points)
+        {
+            for (int i = points.Count - 2; i >= 0; i--)
+            {
+                var distance = Vector3.Distance(points[i].position, points[i + 1].position);
+
+                if (distance < 0.2f)
+                {
+                    points.RemoveAt(i + 1);
+                }
+            }
+
+            return points;
+        }
+
+        public static void OptimizeMesh(Mesh mesh) => MeshUtility.Optimize(mesh);
+        
         public static void Randomize(this ref Vector3 vector3, Vector3 min, Vector3 max)
         {
             vector3 = new Vector3(Random.Range(min.x, max.x), Random.Range(min.y, max.y), Random.Range(min.z, max.z));
 
         }
+        
+        
+        
 
         // public static void AnimateImageFromWorldToUI(this Transform spawnAt, Canvas canvas, Ease ease,
         //     RectTransform target,
