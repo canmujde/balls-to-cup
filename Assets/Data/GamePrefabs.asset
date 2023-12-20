@@ -15,3 +15,5 @@ MonoBehaviour:
   <InstantiatablePrefabs>k__BackingField:
   - {fileID: -3360520930463616071, guid: 4c03fe598166e498db87a27c997c3f62, type: 3}
   - {fileID: 6801500360548224372, guid: 2f071cfca0191184bb2b99edbc908138, type: 3}
+  - {fileID: 5055613232839597702, guid: 19a5452fa46d18240b20b96d0126b0b2, type: 3}
+  - {fileID: 8223813199894977267, guid: 51475ca3e2d125343b3147ef4054f2ee, type: 3}
