@@ -1,5 +1,6 @@
 using CMCore.Managers;
 using CMCore.Models;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,9 +9,11 @@ namespace CMCore.Behaviors.UI.Page.Children
     public class InGameUI : UIBase
     {
         [field: SerializeField] private Button RestartButton { get; set; }
-        [field: SerializeField] private PauseUI PauseUI { get; set; }
-        [field: SerializeField] private Image[] FloatingImages { get; set; }
+        [field: SerializeField] private TextMeshProUGUI CurrentLevelText { get; set; }
+
+        [field: SerializeField] private GameObject Tutorial { get; set; }
         
+
         #region Overriding Methods
 
         public override void Initialize(UIManager uiManager)
@@ -22,7 +25,7 @@ namespace CMCore.Behaviors.UI.Page.Children
         {
             base.OnShow();
             UpdateCurrentLevelText(LevelManager.CurrentLevel);
-            PauseUI?.Hide();
+            
         }
 
         protected override void OnHide()
@@ -33,12 +36,7 @@ namespace CMCore.Behaviors.UI.Page.Children
         #endregion
 
 
-        private void UpdateCurrentLevelText(int level)
-        {
-            // currentLevelText.text = "Level " + level;
-        }
-
-
+        private void UpdateCurrentLevelText(int level) =>CurrentLevelText.text = "Level " + level;
         private void RestartButton_OnClick()
         {
             HapticManager.Play(Enums.Haptic.H1);
@@ -46,19 +44,17 @@ namespace CMCore.Behaviors.UI.Page.Children
             GameManager.EventManager.GameStateChanged?.Invoke(Enums.GameState.InGame);
         }
 
-        private void PauseButton_OnClick()
+        public void ToggleTutorial(bool enable)
         {
-            PauseUI.Show();
-            HapticManager.Play(Enums.Haptic.H1);
+    
+            Tutorial.SetActive(enable);
         }
-
-
         
-        ///////////////////////////// /////////////////////////////
-
+        public void MarkTutorial(bool mark)
+        {
+            ToggleTutorial(false);
+            GameManager.LevelManager.TutorialPlayed = mark;
+        }
         
-        
-
-        
-   }
+    }
 }
