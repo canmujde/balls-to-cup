@@ -20,4 +20,16 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 1911bea494f263741bca0f754667edc4, type: 3}
   - {fileID: 21300000, guid: be9064f4601b98847b10f99c700cb7f3, type: 3}
   - {fileID: 21300000, guid: 158ad7e4f4bdf48c7b9521ee8cbb0c31, type: 3}
-  audioClips: []
+  audioClips:
+  - {fileID: 8300000, guid: 53f69076a3fd7a14d8a20ae0798f62a7, type: 3}
+  - {fileID: 8300000, guid: ef58247fe81cbc24ca5c62701f2b77ff, type: 3}
+  - {fileID: 8300000, guid: dbd29af23ada3784bbabad3f3a09a3bd, type: 3}
+  - {fileID: 8300000, guid: 181b820ba7e41724db78c31d20dcca2c, type: 3}
+  ballMaterials:
+  - {fileID: 2100000, guid: 9587890de58d64544aed7b9afd6e701a, type: 2}
+  - {fileID: 2100000, guid: 2b15558d728bf404ea8bc2c0fc445b65, type: 2}
+  - {fileID: 2100000, guid: c6634bdb6129e5a4b8eb862b9e04d1bb, type: 2}
+  - {fileID: 2100000, guid: 8e2176f9b65738749afb7a729479aecd, type: 2}
+  - {fileID: 2100000, guid: eefc00e4155d8854885eab801430098b, type: 2}
+  - {fileID: 2100000, guid: 5e78e9f23dcc9684bbc5ab40f9e458cf, type: 2}
+  - {fileID: 2100000, guid: 73b99ac8635d0084ea0b4e00221aac02, type: 2}
