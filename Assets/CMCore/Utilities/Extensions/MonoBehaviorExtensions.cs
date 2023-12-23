@@ -16,10 +16,14 @@ namespace CMCore.Utilities.Extensions
         {
             // GameManager.PoolManager.RePoolPrefab?.Invoke(prefabBehavior);
         }
-
+        
+        public static Material GetRandomBallMaterial(this MonoBehaviour mono)
+        {
+            return GameManager.Instance.Core.Assets.BallMaterials.Random();
+        }
+        
         public static Core Core (this MonoBehaviour mono)  => GameManager.Instance.Core;
         public static GameplaySettings Settings(this MonoBehaviour mono)  => GameManager.Instance.Core.GameplaySettings;
-
-        // public static Level CurrentLevel(this MonoBehaviour mono) => GameManager.LevelManager.Current;
+        
     }
 }
