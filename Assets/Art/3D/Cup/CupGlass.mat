@@ -12,12 +12,12 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - _ALPHAPREMULTIPLY_ON
+  - _ALPHABLEND_ON
   - _EMISSION
   m_InvalidKeywords:
   - _SEGMENTED_ON
-  m_LightmapFlags: 2
-  m_EnableInstancingVariants: 0
+  m_LightmapFlags: 1
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 3000
   stringTagMap:
@@ -74,13 +74,13 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 10
     - _GlossMapScale: 1
-    - _Glossiness: 0.683
+    - _Glossiness: 0.645
     - _GlossyReflections: 1
-    - _Lumin: 1.52
+    - _Lumin: 1.09
     - _MaxLight: 1
-    - _Metallic: 0
-    - _MinLight: 0.629
-    - _Mode: 3
+    - _Metallic: 0.06
+    - _MinLight: 0.196
+    - _Mode: 2
     - _OcclusionStrength: 1
     - _Offset: -0.043
     - _OtlWidth: 5
@@ -88,18 +88,18 @@ Material:
     - _Segmented: 1
     - _ShnIntense: 0.738
     - _ShnOverlap: 0
-    - _ShnRange: 0.374
-    - _ShnSmooth: 0.464
+    - _ShnRange: 0.485
+    - _ShnSmooth: 0.721
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _SrcBlend: 1
-    - _Steps: 9.26
-    - _StpSmooth: 0.412
+    - _SrcBlend: 5
+    - _Steps: 2.73
+    - _StpSmooth: 0.197
     - _UVSec: 0
     - _ZWrite: 0
     m_Colors:
-    - _Color: {r: 0.6650944, g: 0.86660254, b: 1, a: 0.5176471}
-    - _EmissionColor: {r: 0, g: 0.44808856, b: 0.8396226, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 0.46666667}
+    - _EmissionColor: {r: 0.5657707, g: 0.5796143, b: 0.735849, a: 1}
     - _OtlColor: {r: 0, g: 0, b: 0, a: 1}
     - _ShnColor: {r: 0.9473069, g: 0.76052475, b: 0.2917707, a: 1}
   m_BuildTextureStacks: []
