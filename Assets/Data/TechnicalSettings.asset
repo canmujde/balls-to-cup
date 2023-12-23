@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9123f35a493484044a5b46f90ec4a028, type: 3}
   m_Name: TechnicalSettings
   m_EditorClassIdentifier: 
-  <LogStateChanges>k__BackingField: 0
+  <LogEnabled>k__BackingField: 0
   <MultiTouchEnabled>k__BackingField: 0
   <TargetFrameRate>k__BackingField: 60
   <PoolExtendSize>k__BackingField: 10
   <TweenSize>k__BackingField: 10000
   <SequenceSize>k__BackingField: 10000
-  <RepeatLastNLevelsAfterFinishedAllLevels>k__BackingField: 5
+  <RepeatLastNLevelsAfterFinishedAllLevels>k__BackingField: 10
   <MaxMusicVolume>k__BackingField: 0.3
