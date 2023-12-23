@@ -88,7 +88,6 @@ namespace CMCore.Managers
             prefab.transform.SetParent(PoolParent);
             prefab.gameObject.name = prefab.Id;
             prefab.gameObject.SetActive(false);
-            prefab.ResetBehavior();
         }
 
         public static void ReturnAll()
