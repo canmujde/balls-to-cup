@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a056b2c0f977c4d3cae69d0ebb8f7aaa, type: 3}
   m_Name: GameplaySettings
   m_EditorClassIdentifier: 
-  <BaseURL>k__BackingField: http://www.canmujde.com/json-browser/json_files/
-  <GameName>k__BackingField: template
-  <FileExtensionOnRemote>k__BackingField: .json
-  <MaximumAttemptToRequestData>k__BackingField: 3
+  <RotationSensitivity>k__BackingField: 0.25
+  <BallBounciness>k__BackingField: 0.795
+  <BallFriction>k__BackingField: 0.2
+  <BallAirFriction>k__BackingField: 5
+  <BallPhysicMaterial>k__BackingField: {fileID: 13400000, guid: 12f97e14897d31b44b5985b4b17dabab, type: 2}
