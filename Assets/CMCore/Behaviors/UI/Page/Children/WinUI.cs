@@ -10,13 +10,6 @@ namespace CMCore.Behaviors.UI.Page.Children
     public class WinUI : UIBase
     {
 
-        public TextMeshProUGUI levelText;
-
-        public Image motivationalText;
-
-        public Sprite[] motivationalSprites;
-        
-
         [SerializeField] private Button nextButton;
 
         private void NextButton_OnClick()
@@ -35,9 +28,7 @@ namespace CMCore.Behaviors.UI.Page.Children
         protected override void OnShow()
         {
             base.OnShow();
-            levelText.text = "LEVEL " + (LevelManager.CurrentLevel - 1);
-            motivationalText.sprite = motivationalSprites[Random.Range(0, motivationalSprites.Length)]; 
-
+            GameManager.AudioManager.PlaySfx("win", 1, 1);
         }
         
 
