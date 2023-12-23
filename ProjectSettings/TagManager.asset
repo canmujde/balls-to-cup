@@ -4,9 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Cell
-  - Item
-  - Plate
+  - BallReleaser
+  - CupContainer
   layers:
   - Default
   - TransparentFX
