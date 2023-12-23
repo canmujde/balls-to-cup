@@ -10,6 +10,7 @@ public class BallBehavior : PrefabBehavior
 {
     private const string c_BallReleaser = "BallReleaser";
     private const string c_CupContainer = "CupContainer";
+    private const float c_CollisionSoundThreshold = 0.5f;
     [SerializeField] private MeshRenderer rend;
     [SerializeField] private TrailRenderer trail;
     [SerializeField] private Rigidbody rigid;
@@ -51,7 +52,7 @@ public class BallBehavior : PrefabBehavior
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (m_CollidedRecently || collision.gameObject.GetComponent<BallBehavior>()) return;
+        if (m_CollidedRecently || collision.gameObject.GetComponent<BallBehavior>() ||rigid.velocity.magnitude<= c_CollisionSoundThreshold) return;
         m_CollidedRecently = true;
         GameManager.AudioManager.PlaySfx("collision", 0.1f, Random.Range(1f,3f));
         GameManager.Instance.DelayedAction(() =>
