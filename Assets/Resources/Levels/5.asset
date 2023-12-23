@@ -20,5 +20,5 @@ MonoBehaviour:
     m_BaseLocalPosition: {x: 0, y: 0, z: 0}
     m_BallReleaserLocalPosition: {x: 0, y: 0, z: 0}
     m_BallReleaserLocalEulerAngles: {x: 0, y: 0, z: 0}
-  <BallCount>k__BackingField: 20
+  <BallCount>k__BackingField: 45
   <BallScale>k__BackingField: 0.17

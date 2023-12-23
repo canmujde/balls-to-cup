@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16db139d284232c4ab0b8be95c829743, type: 3}
-  m_Name: 4
+  m_Name: 6
   m_EditorClassIdentifier: 
-  <TubeSvg>k__BackingField: {fileID: -3888481672020999207, guid: ea7a13378fc864a478563eaf58971be2, type: 3}
-  <SvgTubeExtraXOffset>k__BackingField: 0
+  <TubeSvg>k__BackingField: {fileID: -3888481672020999207, guid: cbcc4aa4c5bb94051ac979e22598ac25, type: 3}
+  <SvgTubeExtraXOffset>k__BackingField: -1.5
   <PreMeshTube>k__BackingField:
     m_Mesh: {fileID: 0}
     m_ContainerLocalPosition: {x: 0, y: 0, z: 0}
     m_BaseLocalPosition: {x: 0, y: 0, z: 0}
     m_BallReleaserLocalPosition: {x: 0, y: 0, z: 0}
     m_BallReleaserLocalEulerAngles: {x: 0, y: 0, z: 0}
-  <BallCount>k__BackingField: 20
+  <BallCount>k__BackingField: 44
   <BallScale>k__BackingField: 0.17
