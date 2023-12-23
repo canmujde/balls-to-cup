@@ -12,7 +12,8 @@ namespace CMCore.Managers
     {
         #region Properties & Fields
         public bool InputAllowed { get; private set; }
-        
+        public static bool MouseDown => GameManager.Instance.State == "InGame" && Input.GetMouseButtonDown(0);
+        public static bool MousePressing => GameManager.Instance.State == "InGame" && Input.GetMouseButton(0);
 
         #endregion
 
