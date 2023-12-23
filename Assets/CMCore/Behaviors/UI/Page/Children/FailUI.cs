@@ -7,6 +7,10 @@ namespace CMCore.Behaviors.UI.Page.Children
 {
     public class FailUI : UIBase
     {
+        
+        [field: SerializeField] public Button RetryButton { get; private set; }
+        
+        
         #region Overriding Methods
 
 
@@ -14,6 +18,7 @@ namespace CMCore.Behaviors.UI.Page.Children
         protected override void OnShow()
         {
             base.OnShow();
+            GameManager.AudioManager.PlaySfx("fail", 1, 1);
         }
 
         protected override void OnHide()
@@ -37,9 +42,8 @@ namespace CMCore.Behaviors.UI.Page.Children
         }
         
         
-        /////////////////////////////
+
         
-        
-        [field: SerializeField] public Button RetryButton { get; private set; }
+
     }
 }
