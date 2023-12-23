@@ -9,6 +9,8 @@ namespace CMCore.Behaviors.Object
         [SerializeField] private TextMeshPro text;
 
         private const float c_movementSpeed = 5f;
+        private const float c_offset = 0.1f;
+        private const float c_zPos = 4;
 
         public override void ResetBehavior()
         {
@@ -28,8 +30,8 @@ namespace CMCore.Behaviors.Object
 
             var to = new Vector3(
                 _tubeContainer.transform.position.x > 0
-                    ? _tubeContainer.transform.position.x - 0.25f
-                    : _tubeContainer.transform.position.x + 0.25f, _tubeContainer.transform.position.y, 4);
+                    ? _tubeContainer.transform.position.x - c_offset
+                    : _tubeContainer.transform.position.x + c_offset, _tubeContainer.transform.position.y, c_zPos);
             transform.position = Vector3.Slerp(transform.position, to, Time.deltaTime * c_movementSpeed);
         }
     }
