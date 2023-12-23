@@ -57,7 +57,7 @@ namespace CMCore.Behaviors.Object
             _tubeBehavior.ResetBehavior();
             _cupBehavior.ResetBehavior();
             _tubeIndicator.ResetBehavior();
-            _tubeIndicator.SetTubeContainer(_tubeBehavior.BallReleaserTransform); 
+            _tubeIndicator.SetTubeContainer(_tubeBehavior.transform); 
             _tubeIndicator.UpdateText(m_currentBallCountInsideTube);
             GameManager.UIManager.InGameUI.ToggleTutorial(false);
             
