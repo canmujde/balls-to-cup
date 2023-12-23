@@ -13,19 +13,15 @@ namespace CMCore.Managers
     {
         #region Properties & Fields
 
-        public InGameUI InGameUI => _inGameUI == null ? _inGameUI = Object.FindObjectOfType<InGameUI>() : _inGameUI;
+        public InGameUI InGameUI => _inGameUI == null ? _inGameUI = Object.FindObjectOfType<InGameUI>(true) : _inGameUI;
         private InGameUI _inGameUI;
         
-        public WinUI WinUI => _winUI == null ? _winUI = Object.FindObjectOfType<WinUI>() : _winUI;
+        public WinUI WinUI => _winUI == null ? _winUI = Object.FindObjectOfType<WinUI>(true) : _winUI;
         private WinUI _winUI;
         
-        public FailUI FailUI => _failUI == null ? _failUI = Object.FindObjectOfType<FailUI>() : _failUI;
+        public FailUI FailUI => _failUI == null ? _failUI = Object.FindObjectOfType<FailUI>(true) : _failUI;
         private FailUI _failUI;
-        
-        
-        public PauseUI PauseUI => _pauseUI == null ? _pauseUI = Object.FindObjectOfType<PauseUI>(true) : _pauseUI;
-        private PauseUI _pauseUI;
-        
+
         public LoadingUI LoadingUI => _loadingUI == null ? _loadingUI = Object.FindObjectOfType<LoadingUI>(true) : _loadingUI;
         private LoadingUI _loadingUI;
 
@@ -57,7 +53,6 @@ namespace CMCore.Managers
             LoadingUI.Initialize(this);
             WinUI.Initialize(this);
             InGameUI.Initialize(this);
-            PauseUI.Initialize(this);
         }
         
         private void ChangeStateUI(Enums.GameState state)
@@ -68,26 +63,23 @@ namespace CMCore.Managers
                     FailUI.Hide();
                     InGameUI.Hide();
                     WinUI.Hide();
-                    PauseUI.Hide();
                     LoadingUI.Show();
                     break;
                 case Enums.GameState.InGame:
                     FailUI.Hide();
                     InGameUI.Show();
                     WinUI.Hide();
-                    PauseUI.Hide();
+
                     break;
                 case Enums.GameState.Fail:
                     FailUI.Show();
                     InGameUI.Hide();
                     WinUI.Hide();
-                    PauseUI.Hide();
                     break;
                 case Enums.GameState.Win:
                     FailUI.Hide();
                     InGameUI.Hide();
                     WinUI.Show();
-                    PauseUI.Hide();
                     break;
             }
         }
