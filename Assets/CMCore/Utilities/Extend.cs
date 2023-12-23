@@ -32,7 +32,7 @@ namespace CMCore.Utilities
         }
 
 
-        public static List<SplinePoint> GenerateSplinePointsFromSVGInfo(SVGParser.SceneInfo info, float scaleFactor)
+        public static List<SplinePoint> GenerateSplinePointsFromSVGInfo(SVGParser.SceneInfo info, float scaleFactor, float extraXOffset)
         {
             var sceneRoot = info.Scene.Root;
             var firstPath = sceneRoot.Children[0];
@@ -45,9 +45,8 @@ namespace CMCore.Utilities
             foreach (var currentSegment in segments)
             {
                 var pos = currentSegment.P0 * scaleFactor;
+                var splinePoint = new SplinePoint(pos + Vector2.right*extraXOffset);
 
-                var splinePoint = new SplinePoint(pos);
-                
                 points.Add(splinePoint);
             }
 
@@ -71,6 +70,8 @@ namespace CMCore.Utilities
                 }
                 points = newList;
             }
+            
+            
             return RemoveClosePoints(points);
         }
 
