@@ -45,9 +45,12 @@ namespace CMCore.Managers
 
         public bool TutorialPlayed
         {
-            get => Application.isPlaying && DataManager.GetPrefData("TutorialPlayed_" + CurrentLevelId, "NO") == "YES";
-            set => DataManager.SetPrefData("TutorialPlayed_" + CurrentLevelId, value ? "YES" : "NO");
+            get => Application.isPlaying && DataManager.GetPrefData("TutorialPlayed", "NO") == "YES";
+            set => DataManager.SetPrefData("TutorialPlayed", value ? "YES" : "NO");
         }
+
+
+        public LevelBehavior LevelBehavior;
 
         #endregion
 
@@ -62,6 +65,9 @@ namespace CMCore.Managers
             {
                 case Enums.GameState.Menu:
                     Current = Create();
+                    LevelBehavior = PoolManager.Retrieve("LevelBehavior").GetComponent<LevelBehavior>();
+                    LevelBehavior.ResetBehavior();
+
                     break;
                 case Enums.GameState.InGame:
                     break;
@@ -79,9 +85,6 @@ namespace CMCore.Managers
 
             Seed = RandomExtensions.RandomSeed();
             var level = GetLevelByIndex(CurrentLevelId);
-            var levelBehavior = PoolManager.Retrieve("LevelBehavior");
-            
-            
             return level;
         }
 
@@ -108,6 +111,5 @@ namespace CMCore.Managers
             CurrentLevelId += 1;
             CurrentLevel += 1;
         }
-        
     }
 }
